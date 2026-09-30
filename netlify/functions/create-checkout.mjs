@@ -21,7 +21,7 @@ export default async function(request){
       return null;
     });
     if(lines.some(line=>!line))throw Error('Please refresh your bag and try again.');
-    const form=new URLSearchParams();form.set('mode','payment');form.set('allow_promotion_codes','true');form.set('customer_email',String(order.email).trim());form.set('payment_method_types[0]','card');form.set('billing_address_collection','auto');form.set('shipping_address_collection[allowed_countries][0]',order.country);
+    const form=new URLSearchParams();form.set('mode','payment');form.set('locale',order.language==='fr'?'fr':'en');form.set('allow_promotion_codes','true');form.set('customer_email',String(order.email).trim());form.set('payment_method_types[0]','card');form.set('billing_address_collection','auto');form.set('shipping_address_collection[allowed_countries][0]',order.country);
     const site=(process.env.SITE_URL||process.env.URL||'https://legendary-figolla-bf3f2e.netlify.app').replace(/\/$/,'');
     form.set('success_url',site+'/?session_id={CHECKOUT_SESSION_ID}#thanks');form.set('cancel_url',site+'/#bag');
     form.set('shipping_options[0][shipping_rate_data][type]','fixed_amount');form.set('shipping_options[0][shipping_rate_data][fixed_amount][amount]',String(order.sizing==='kit'?rate.kitCents:rate.coinCents));form.set('shipping_options[0][shipping_rate_data][fixed_amount][currency]','eur');form.set('shipping_options[0][shipping_rate_data][display_name]',rate.label);
