@@ -1,5 +1,6 @@
 // Keep product names and order values stable while translating the interface.
 const frenchCopy = {
+'CONTACT':'CONTACT','Get in touch':'Contactez-nous','Discover Martini Society':'Découvrir Martini Society',
 'HANDMADE PRESS-ONS ♡ MADE JUST FOR YOU':'PRESS-ONS FAITS MAIN ♡ CRÉÉS POUR VOUS',
 'HOME':'ACCUEIL','SHOP':'BOUTIQUE','CREATE YOUR SET':'CRÉEZ VOTRE SET','SIZING':'TAILLES','ABOUT':'À PROPOS','BAG':'PANIER',
 'HANDMADE · MADE TO ORDER':'FAITS MAIN · SUR COMMANDE',
